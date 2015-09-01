@@ -100,4 +100,6 @@ crashlytics-build.properties
 # CTK ignores
 */testresults/
 
-
+# Gradle builds
+.gradle/
+*/build/

@@ -1,0 +1,14 @@
+allprojects  {
+  group = 'org.ga4gh'
+  version = '0.5.1-SNAPSHOT'
+}
+
+subprojects {
+  apply plugin: 'java'
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  repositories {
+     mavenCentral()
+  }  
+}

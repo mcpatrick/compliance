@@ -1,0 +1,18 @@
+plugins {
+  id "com.commercehub.gradle.plugin.avro" version "0.4.0"
+}
+
+description = 'CTK Schemas'
+
+repositories {
+       jcenter()
+}
+
+dependencies {
+    compile 'org.apache.avro:avro:1.7.7'
+    compile 'org.apache.avro:avro-ipc:1.7.7'
+}
+
+avro {
+   stringType = "string"
+}

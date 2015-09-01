@@ -1,0 +1,15 @@
+description = """CTK Domain Support"""
+
+repositories {
+   maven { url 'http://repository.apache.org/snapshots' }
+}
+
+dependencies {
+    compile project(':ctk-schemas')
+    compile 'org.apache.avro:avro:1.7.7'
+    compile 'org.apache.avro:avro-ipc:1.7.7'
+    compile 'junit:junit:4.12'
+    compile 'org.assertj:assertj-core:3.1.0'
+    // MCP - Why SNAPSHOT??
+    compile 'org.apache.bcel:bcel:6.0-SNAPSHOT'
+}
