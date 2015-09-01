@@ -1,4 +1,4 @@
-description = """CTK Domain Support"""
+description = 'CTK Domain Support'
 
 repositories {
    maven { url 'http://repository.apache.org/snapshots' }
