@@ -28,9 +28,9 @@ public class FragmentEncoder {
    * the specified encoding scheme {@code enc}.
    * <p>
    * All characters except letters ('a'..'z', 'A'..'Z') and numbers ('0'..'9')
-   * and characters '.', '-', '*', '_', '!', '$', '&', ''', '(', ')', '*', '+',
+   * and characters '.', '-', '*', '_', '!', '$', '&amp;', ''', '(', ')', '*', '+',
    * ',', ';', '=', '~', ':', '@', '/', '?' are converted into their hexadecimal
-   * value prepended by '%'. For example: '#' -> %23. In addition, spaces are
+   * value prepended by '%'. For example: '#' -&gt; %23. In addition, spaces are
    * substituted by '+'
    * 
    * @param s
@@ -92,7 +92,7 @@ public class FragmentEncoder {
    * <p>
    *'+' will be converted to space, '%' and two following hex digit
    * characters are converted to the equivalent byte value. All other
-   * characters are passed through unmodified. For example "A+B+C %24%25" ->
+   * characters are passed through unmodified. For example "A+B+C %24%25" -&gt;
    * "A B C $%".
    *
    * @param s

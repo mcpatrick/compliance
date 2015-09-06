@@ -16,9 +16,9 @@ public class TransportUtils {
     /**
      * Create a new URL (as a string) based on a server root (which may include path components
      * and query parameters) and a path that's relative to the server root.
-     * <p>For instance, if we have <tt>baseUrl</tt> = <tt>https://locahost:8000/v1.0?param1=foo&param2=bar</tt>
+     * <p>For instance, if we have <tt>baseUrl</tt> = <tt>https://locahost:8000/v1.0?param1=foo&amp;param2=bar</tt>
      * and <tt>path</tt> = "datasets/search", the result should be
-     * <tt>https://locahost:8000/v1.0/datasets/search?param1=foo&param2=bar</tt>.
+     * <tt>https://locahost:8000/v1.0/datasets/search?param1=foo&amp;param2=bar</tt>.
      * </p>
      * @param baseUrl a server root URL
      * @param path relative path

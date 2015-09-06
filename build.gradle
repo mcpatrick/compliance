@@ -11,4 +11,25 @@ subprojects {
   repositories {
      mavenCentral()
   }  
+
+  if(project.name[0..3] == 'ctk-') { 
+    task sourcesJar(type: Jar, dependsOn: compileJava) {
+      classifier = 'sources'
+      from file("${projectDir}/src")
+    }
+
+    // MCP - Way too many compile errors for the javadocs for ctk-transport to sort out now.
+    if (project.name != 'ctk-transport') {
+      task ctkJavadoc(type: Javadoc, dependsOn: compileJava) {
+        source = file("${projectDir}/src/main/java")
+        classpath = project.sourceSets.main.compileClasspath
+      }
+
+      task javadocJar(type: Jar, dependsOn: ctkJavadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+      }
+    }
+  }
 }
+

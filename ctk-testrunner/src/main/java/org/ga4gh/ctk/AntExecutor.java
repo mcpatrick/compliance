@@ -33,10 +33,10 @@ import static org.slf4j.LoggerFactory.getLogger;
  * <p>The ant file is set by the "ctk.antfile" property - normally it is the "lib/antRunTests.xml" file</p>
  * <p>The antfile is expected to do two main tasks:</p>
  * <ul>
- *     <li>&lt;junit> runs junit to execute tests (methods annotated with @Test) from test classes
+ *     <li>&lt;junit&gt; runs junit to execute tests (methods annotated with @Test) from test classes
  *     (classes selected a name regex-match from a test-classes jar; this junit task creates
  *     .xml and .txt. output files in the "target/" directory</li>
- *     <li>&lt;junitreport> evaluates the <junit> *.xml results and creates an HTML
+ *     <li>&lt;junitreport&gt; evaluates the &lt;junit&gt; *.xml results and creates an HTML
  *     version in "target/report/html" tree</li>
  * </ul>
  * <p>This class sets properties to pass into the ant execution:
