@@ -1,1 +1,1 @@
-include "ctk-schemas", "ctk-domain"
+include "ctk-schemas", "ctk-domain", "ctk-transport", "ctk-testrunner", "ctk-server", "ctk-cli"
