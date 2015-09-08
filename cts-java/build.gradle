@@ -1,0 +1,33 @@
+repositories {
+        
+     maven { url "http://repo.jenkins-ci.org/public/" }
+     maven { url "http://repository.apache.org/snapshots" }
+     maven { url "http://repo.spring.io/snapshot" }
+     maven { url "http://repo.spring.io/milestone" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile project(':ctk-domain')
+    compile project(':ctk-transport')
+    compile project(':ctk-schemas')
+    compile "org.slf4j:slf4j-simple:${slf4jVersion}"
+    compile "pl.pragmatists:JUnitParams:${plJunitParamsVersion}"
+    compile "org.tap4j:tap4j-ext:${tap4jExtVersion}"
+    compile "org.assertj:assertj-core:${assertjCoreVersion}"
+    compile "org.skyscreamer:jsonassert:${jsonassertVersion}"
+    compile "com.mashape.unirest:unirest-java:${unirestJavaVersion}"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "commons-logging:commons-logging:${commonsLoggingVersion}"
+    compile "com.google.guava:guava:${guavaVersion}"
+    compile "com.google.code.gson:gson:${gsonVersion}"
+    testCompile "junit:junit:${junitVersion}"
+    testCompile "com.googlecode.junit-toolbox:junit-toolbox:${junitToolboxVersion}"
+    testCompile "org.apache.bcel:bcel:${bcelVersion}"
+}
+
+//packaging tests
+task packageTests(type: Jar) {
+  from sourceSets.test.output
+  classifier = 'tests'
+}
+artifacts.archives packageTests

@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.apache.avro:avro:1.7.7'
-    compile 'org.apache.avro:avro-ipc:1.7.7'
+    compile "org.apache.avro:avro:${avroVersion}"
+    compile "org.apache.avro:avro-ipc:${avroVersion}"
 }
 
 avro {
