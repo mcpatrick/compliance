@@ -1,13 +1,7 @@
 package org.ga4gh.cts.api;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.SetMultimap;
 import org.ga4gh.models.Reference;
 import org.ga4gh.models.ReferenceSet;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * This class defines important constants that pertain to and describe the official test data.
@@ -38,28 +32,20 @@ public class TestData {
      * The names of the readgroup sets in the standard compliance dataset.
      */
     public static final String[] EXPECTED_READGROUPSETS_NAMES = {
-            "1kg-low-coverage",
+            "compliance-dataset1:1kg-low-coverage",
+            "compliance-dataset1:wgBam",
     };
 
     /**
      * The names of known-good read groups.
      */
-    public static final SetMultimap<String, String> EXPECTED_READGROUPSET_READGROUP_NAMES =
-            HashMultimap.create();
-
-    static {
-        EXPECTED_READGROUPSET_READGROUP_NAMES.putAll("1kg-low-coverage",
-                                                     Arrays.asList("BRCA1_HG00096",
-                                                                   "BRCA1_HG00099",
-                                                                   "BRCA1_HG00101"));
-    }
-
-    /**
-     * The names of all known {@link org.ga4gh.models.ReadGroup} objects, obtained from
-     * {@link #EXPECTED_READGROUPSET_READGROUP_NAMES}.
-     */
-    public static final List<String> EXPECTED_READGROUP_NAMES =
-            new ArrayList<>(EXPECTED_READGROUPSET_READGROUP_NAMES.values());
+    public static final String[] SOME_EXPECTED_READGROUP_NAMES = {
+            "compliance-dataset1:wgBam:wgEncodeUwRepliSeqBg02esG1bAlnRep1_sample",
+            "compliance-dataset1:wgBam:wgEncodeUwRepliSeqBg02esG2AlnRep1_sample",
+            "compliance-dataset1:1kg-low-coverage:HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20120522",
+            "compliance-dataset1:1kg-low-coverage:HG00533.mapped.ILLUMINA.bwa.CHS.low_coverage.20120522",
+            "compliance-dataset1:1kg-low-coverage:HG00534.mapped.ILLUMINA.bwa.CHS.low_coverage.20120522",
+    };
 
     /**
      * The names of all {@link ReferenceSet}s.
