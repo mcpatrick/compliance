@@ -14,7 +14,7 @@ public class AntExecListener implements BuildListener, CtkLogs {
     /**
      * Signals that a build has started. This event
      * is fired before any targets have started.
-     * <p>
+     * &lt;p&gt;
      * <p>This event is fired before the project instance is fully
      * configured.  In particular no properties have been set and the
      * project may not know its name or default target, yet.</p>
