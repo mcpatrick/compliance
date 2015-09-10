@@ -23,4 +23,5 @@ dependencies {
     compile "org.apache.ant:ant-junit:${antVersion}"
     compile "org.apache.ant:ant-junit4:${antVersion}"
     testCompile "org.apache.bcel:bcel:${bcelVersion}"
+    testCompile "org.assertj:assertj-core:${assertjCoreVersion}"
 }

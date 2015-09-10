@@ -14,7 +14,9 @@ dependencies {
         exclude(module: 'spring-boot-starter-logging')
     }
     compile "org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}"
-    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
+        exclude(module: 'spring-boot-starter-logging')
+    }
     compile "org.apache.avro:avro:${avroVersion}"
     compile "org.tap4j:tap4j-ext:${tap4jExtVersion}"
     compile "org.apache.ant:ant-junit:${antVersion}"

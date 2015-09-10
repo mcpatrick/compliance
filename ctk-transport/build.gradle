@@ -1,6 +1,6 @@
 //apply plugin: 'jmeter'
 
-description = 'CTK Domain Support'
+description = 'CTK Transport'
 
 repositories {
    maven { 
