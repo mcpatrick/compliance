@@ -25,9 +25,32 @@ dependencies {
     testCompile "org.apache.bcel:bcel:${bcelVersion}"
 }
 
-//packaging tests
-task packageTests(type: Jar) {
-  from sourceSets.test.output
-  classifier = 'tests'
+sourceSets {
+   // Note that just declaring this sourceset creates two configurations.
+   serverTest {
+      java {
+         compileClasspath += main.output + test.output
+         runtimeClasspath += main.output + test.output
+      }
+   }
 }
-artifacts.archives packageTests
+
+configurations {
+   serverTestCompile.extendsFrom testCompile
+   serverTestRuntime.extendsFrom testRuntime
+}
+
+task serverTest(type:Test){
+   description = "Run integration tests (located in src/serverTest/...)."
+   testClassesDir = project.sourceSets.serverTest.output.classesDir
+   classpath = project.sourceSets.serverTest.runtimeClasspath
+}
+
+
+
+////packaging tests
+//task packageTests(type: Jar) {
+//  from sourceSets.test.output
+//  classifier = 'tests'
+//}
+//artifacts.archives packageTests
