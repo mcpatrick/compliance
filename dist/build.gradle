@@ -1,0 +1,24 @@
+description = 'Create distribution zipfiles'
+
+task zipCli(type: Zip) {
+    baseName = 'ga4gh-ctk-cli'
+    into('lib') {
+       from '../ctk-testrunner/src/main/resources/antRunTests.xml'
+       from '../ctk-cli/build/resources/main/log4j2.xml'
+    }
+    from '../ctk-cli/build/resources/main/ctk'
+    from '../docs/README-IntroAtCommandLine.txt'
+    from '../ctk-cli/build/resources/main/application.properties'
+}
+
+task zipServer(type: Zip) {
+    baseName = 'ga4gh-ctk-server'
+    into('lib') {
+       from '../ctk-testrunner/src/main/resources/antRunTests.xml'
+       from '../ctk-cli/build/resources/main/log4j2.xml'
+    }
+    from '../ctk-server/build/resources/main/ctk'
+    from '../docs/README-Server.txt'
+    from '../ctk-server/build/resources/main/application.properties'
+
+}
