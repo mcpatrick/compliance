@@ -6,7 +6,15 @@ repositories {
 
 dependencies {
     compile project(':ctk-schemas')
-//    testCompile 'junit:junit:${junitVersion}'
-//    testCompile 'org.assertj:assertj-core:${assertjCoreVersion}'
+    compile "junit:junit:${junitVersion}"
+    compile "org.assertj:assertj-core:${assertjCoreVersion}"
 //    testCompile 'org.apache.bcel:bcel:${bcelVersion}'
+}
+
+sourceSets {
+   main {
+      java {
+         srcDir 'src'
+      }
+   }
 }
