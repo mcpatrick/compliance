@@ -51,3 +51,4 @@ task testJar(type: Jar) {
   from sourceSets.serverTest.output
 }
 
+tasks.jar.dependsOn(testJar)
