@@ -1,6 +1,6 @@
 description = 'Create distribution zipfiles'
 
-task zipCli(type: Zip) {
+task zipCli(type: Zip, dependsOn: [':ctk-cli:jar', ':cts-java:testJar']) {
     println "Jar name: ../ctk-cli/build/libs/ctk-cli-${version}.jar"
     baseName = 'ga4gh-ctk-cli'
     into('lib') {
@@ -14,7 +14,7 @@ task zipCli(type: Zip) {
     from "../ctk-cli/build/libs/ctk-cli-${version}.jar"
 }
 
-task zipServer(type: Zip) {
+task zipServer(type: Zip, dependsOn: [':ctk-server:jar', ':cts-java:testJar']) {
     baseName = 'ga4gh-ctk-server'
     into('lib') {
        from '../ctk-testrunner/src/main/resources/antRunTests.xml'
