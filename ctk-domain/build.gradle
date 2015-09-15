@@ -8,7 +8,6 @@ dependencies {
     compile project(':ctk-schemas')
     compile "junit:junit:${junitVersion}"
     compile "org.assertj:assertj-core:${assertjCoreVersion}"
-//    testCompile 'org.apache.bcel:bcel:${bcelVersion}'
 }
 
 sourceSets {
